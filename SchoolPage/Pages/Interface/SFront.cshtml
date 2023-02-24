@@ -1,0 +1,125 @@
+﻿@page
+@model SchoolPage.Pages.Interface.SFrontModel
+@{
+
+    ViewData["yum"] = "Instructor Listings";
+}
+
+<h2>Student Front </h2>
+
+@*Drop Down Table*@
+
+
+<form asp-action="InstructorSelect">
+    <p>Choose Instructor:</p>
+    <br />
+    <select asp-for="SelectInstructor" asp-items="Model.InstructorList">
+        <option value="">Choose an Instructor</option>
+    </select>
+    <br />
+    <input type="submit" class="btn btn-primary">
+</form>
+
+<table class = "table table=bordered table-responsive table-hover">
+    <thead>
+        <tr>
+      
+            <th>OfficeHours Date:</th>
+            <th>OfficeHours Time:</th>
+            <th>OfficeHours Location:</th>
+            <th>OfficeHours WaitLocation:</th>
+            <th>OfficeHours instructorID:</th>
+        <tr>
+    </thead>
+    <tbody>
+           @{ 
+               foreach (var oh in Model.OHList)
+               {
+            
+                <tr>
+              
+                <td>@oh.ohDate</td>
+                <td>@oh.ohTimes</td>
+                <td>@oh.ohLocation</td>
+                <td>@oh.ohWaitLocation</td>
+                <td class="text-danger">@oh.instructorID</td>
+                </tr>
+               }
+            }
+        
+    </tbody>
+
+</table>
+<h5>Upcoming Meetings</h5>
+<table class="table table=bordered table-responsive table-hover">
+    <thead>
+        <tr>
+
+            <th>Meeting Name:</th>
+            <th>Meeting Date:</th>
+            <th>Meeting Time:</th>
+            <th>Meeting Purpose:</th>
+           
+            
+        <tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var m in Model.MeetingList)
+            {
+
+                <tr>
+
+                    <td>@m.meetingName</td>
+                    <td>@m.scheduleMeetingDate</td>
+                    <td>@m.scheduledMeetingTime</td>
+                    <td>@m.meetingPurpose</td>
+                   
+        
+                </tr>
+            }
+        }
+
+    </tbody>
+
+</table>
+
+
+
+<br />
+@*Show All available classes*@
+<table class = "table table=bordered table-responsive table-hover">
+    <thead>
+        <tr>
+           
+            <th>Class Name:</th>
+            <th>Class Description:</th>
+            <th>Class Location:</th>
+        <tr>
+    </thead>
+    <tbody>
+           @{ 
+               foreach (var c in Model.ClassList)
+               {
+            
+                <tr>
+              
+                <td>@c.className</td>
+                <td>@c.classDescription</td>
+                <td>@c.classLocation</td>
+                </tr>
+               }
+            }
+        
+    </tbody>
+
+</table>
+<br />
+    <p><a href="/Interface/MeetingPage/"> </p>
+        <button> Create a Meeting </button>
+
+<br />
+<p><a href="/Index/"> </p>
+<button> Go Home </button> </a>
+<p><a href="/Interface/StudentPage/"> </p>
+<button> Go Back </button>

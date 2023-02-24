@@ -1,0 +1,72 @@
+﻿@page
+@model SchoolPage.Pages.Interface.InstructorFrontModel
+@{
+}
+<h2>Instructor Front</h2>
+<h5>The students that are in the database are listed here.</h5>
+
+@*List Students*@
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+           
+            <th>Student First:</th>
+            <th>Student Last:</th>
+            <th>Student Email:</th>
+            <th>Student Phone:</th>
+            <th>Student PartnerID:</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @{
+            foreach (var student in Model.StudentList)
+            {
+                <tr>
+
+              
+                <td>@student.studentFirstName</td>
+                <td>@student.studentLastName</td>
+                <td>@student.studentEmail</td>
+                <td>@student.studentPhone</td>
+                <td>@student.studentPartnerID</td>
+
+               
+                </tr>
+            }
+            }
+    </tbody>
+</table>
+
+@*Form to add officeHours time*@
+<form asp-page="AddOfficeHours">
+    <input asp-for="AddOfficeHours.ohDate" placeholder="Enter Date:(mm-dd-yyyy)" />
+    <br />
+    <input asp-for="AddOfficeHours.ohTimes" placeholder="Enter Office Hours Time: " />
+    <br />
+    <input asp-for="AddOfficeHours.ohLocation" placeholder="Enter Office Hour Location: " />
+    <br />
+    <input asp-for="AddOfficeHours.ohWaitLocation" placeholder="Enter Wait Location: " />
+    <br />
+    <input asp-for="AddOfficeHours.instructorID" placeholder="Enter InstructorID: " />
+    <br />
+    <input type="submit" value="Create OfficeHours" />
+    <br />
+   @* <p><a href="/Interface/OfficeHoursView/ "> </p>
+    <button>Continue </button> </a>*@
+
+
+
+</form>
+
+
+
+
+
+
+<p><a href="/Index/"> </p>
+<button> Go Home </button> </a>
+<br />
+<a class="btn btn-outline-primary" asp-page="instructorLogin" asp-route-logout="true">logout</a>

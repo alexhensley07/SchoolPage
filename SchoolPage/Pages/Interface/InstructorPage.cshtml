@@ -1,0 +1,32 @@
+﻿@page
+@model SchoolPage.Pages.Interface.InstructorPageModel
+@{
+}
+<h2>Instructor View</h2>
+
+@*Adding a Instructor to Instructor DB*@
+
+<form asp-page="AddInstructor">
+    <div class="form-text">Your entered information will be saved once submitted!</div>
+    <input asp-for="AddInstructor.instructorFirstName"   placeholder="Enter First Name: " />
+    <br />
+    
+    <input asp-for="AddInstructor.instructorLastName" placeholder="Enter Last Name: " />
+    <br />
+    <input asp-for="AddInstructor.instructorEmail" placeholder="Enter Email: " />
+    <br />
+    <input asp-for="AddInstructor.instructorSubject" placeholder="Enter Subject: " />
+    <br />
+
+    <button type="submit" class="btn btn-primary">Create Account</button>
+    
+</form>
+<div class="form-text">The Continue button will take you to the instructorFront page.</div>
+<p> <a href="/Interface/InstructorFront/"></p>
+<button> Continue </button> </a>
+
+
+<p><a href="/Index/"> </p>
+<button> Go Home </button> </a>
+
+

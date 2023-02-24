@@ -1,0 +1,54 @@
+﻿@page
+@model SchoolPage.Pages.Interface.StudentPageModel
+@{
+}
+<h2>Student View</h2>
+
+@*Add Student*@
+
+<form asp-page="AddStudent">
+    <div class="form-text">Your information will be added to the database once you hit the Create Account Button</div>
+    <input asp-for="AddStudent.studentFirstName" class="form-control" id="floatingFirstName" placeholder="Enter First Name: " />
+    <label for="floatingFirstName">FirstName</label>
+    <span asp-validation-for="FirstName" class="text-danger"></span>
+   
+    <br />
+    <input asp-for="AddStudent.studentLastName" class="form-control" id="floatingLastName" placeholder="Enter Last Name: " />
+    <label for="floatingLastName">LastName</label>
+    <span asp-validation-for="LastName" class="text-danger"></span>
+    <br />
+    <input asp-for="AddStudent.studentEmail" class="form-control" id="floatingEmail" placeholder="Enter Email: " />
+    <label for="floatingEmail">Email</label>
+    <span asp-validation-for="Email" class="text-danger"></span>
+    <br />
+    <input asp-for="AddStudent.studentPhone" class="form-control" id="floatingPhone" placeholder="Enter Phone: " />
+    <label for="floatingPhone">Phone</label>
+    <span asp-validation-for="Phone" class="text-danger"></span>
+    <br />
+    <input asp-for="AddStudent.studentPartnerID" class="form-control" id="floatingPartnerID" placeholder="Enter Partner ID: " />
+    <label for="floatingPartnerID">PartnerID</label>
+    <span asp-validation-for="PartnerID" class="text-danger"></span>
+    <br />
+    <button type="submit" class="btn btn-primary">Create Account</button>
+    <br />
+    <button  asp-page="AddStudent" asp-page-handler="PopulateHandler" formnovalidate>Populate</button>
+   
+    <br />
+
+ 
+ 
+
+    
+</form>
+
+<div class="form-text">The Continue button will take you to the studentFront page.</div>
+<p> <a href="/Interface/SFront/"></p>
+<button> Continue </button> </a>
+
+<p> <a href="/Index/"> </p>
+<button> Go Home </button> </a>
+
+
+
+
+    

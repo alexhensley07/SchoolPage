@@ -1,0 +1,33 @@
+﻿@page
+@model SchoolPage.Pages.Interface.MeetingPageModel
+@{
+}
+
+@*How to add a meeting *@
+
+<form asp-page="addMeeting">
+    <input asp-for="addMeeting.meetingName" placeholder="Enter Meeting Name: " />
+    <br />
+    <input asp-for="addMeeting.scheduleMeetingDate" placeholder="Enter Meeting Date: " />
+    <br />
+    <input asp-for="addMeeting.scheduledMeetingTime" placeholder="Enter Meeting Time: " />
+    <br />
+    <input asp-for="addMeeting.meetingPurpose" placeholder="Enter Meeting Purpose: " />
+    <br />  
+    <input asp-for="addMeeting.instructorID" placeholder="Enter InstructorID: " />
+    <br /> 
+    <input asp-for="addMeeting.studentID" placeholder="Enter StudentID: " />
+    <br />
+    <input type="submit" value="Create Your Meeting" />
+  
+
+
+
+</form>
+
+
+
+<p><a href="/Index/"> </p>
+<button> Go Home </button> </a>
+<p><a href="/Interface/SFront/"> </p>
+<button> Go Back </button> </a>
